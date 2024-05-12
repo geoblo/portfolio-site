@@ -1,0 +1,277 @@
+/* COMMON */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* 스크롤 이동을 부드럽게 */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+
+  /* 기본(공통) 스타일 추가 */
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #333;
+  overflow-x: hidden;
+  background-color: #fff8e8;
+
+  /* 배경 이미지 사용 시 */
+  /* background-image: url("../images/파일명");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain; */
+}
+
+/* 영문에만 적용할 폰트 */
+.font-en {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  /* 밑줄 제거 */
+  text-decoration: none;
+  color: #333;
+}
+
+.inner {
+  /* 고정 길이=고정형 */
+  /* width: 1200px; */
+  /* 최대값만 제한=반응형 */
+  max-width: 1200px;
+  /* 가로 너비를 가진 블록 요소를 부모 안에서 가운데 정렬 */
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.title:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #222;
+  margin: 24px auto 0;
+}
+
+.btn {
+  width: 120px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  display: block; /* a, span 같은 인라인 요소를 버튼으로 사용할 수도 있으니 블록으로 지정 */
+  transition-duration: 0.5s;
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* HEADER */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #c8c8c8;
+
+  /* 고정된 헤더 만들기 */
+  width: 100%;
+  position: fixed; /* 가로 너비를 지정하지 않으면 최소한으로 줄어드려고 함 */
+  top: 0;
+  z-index: 9;
+}
+header > .inner {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo img {
+  width: 40px;
+  /* 가로 너비만 지정하면 세로 높이는 비율에 맞춰 정해짐 */
+}
+
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  padding: 10px 20px;
+  font-weight: 700;
+}
+header nav ul li a:hover {
+  color: orange;
+}
+
+/* VISUAL */
+.visual {
+  /* (중요) 
+    헤더가 fixed 되어 일반 배치 흐름에서 벗어남(주변 요소들과 상호작용하지 않음) 
+    헤더 다음에 오는 섹션은 헤더의 높이만큼 외부 여백 추가 필요
+  */
+  margin-top: 60px;
+}
+.visual video {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  /* 영역 전체를 가득 덮음 */
+  object-fit: cover;
+}
+
+/* ABOUT */
+.about {
+  margin-top: 100vh;
+  padding-top: 200px;
+}
+.about .inner {
+  position: relative;
+  padding-bottom: 30px;
+}
+.about .about__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about .about__wrapper .about__img {
+  width: 40%;
+}
+.about .about__wrapper .about__img img {
+  width: 100%;
+  border-radius: 50%;
+}
+.about .about__wrapper .about__text {
+  width: 45%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.about .about__wrapper .about__text .slogan {
+  font-weight: bold;
+  font-size: 35px;
+}
+.about .about__wrapper .about__text h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.about .about__wrapper .about__text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.about .about__wrapper .about__text li {
+  line-height: 1.8;
+}
+.about .about__btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.about .about__btn img {
+  width: 28px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* SKILL */
+.skill {
+  padding-top: 200px;
+}
+.skill .skill__list {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.skill .skill__list > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  /* 추후 애니메이셔 효과 추가 예정 */
+  /* top: 100px; */
+  /* opacity: 0; */
+}
+.skill .skill__list li div {
+  width: 50px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #b9e3f9;
+  transform: rotate(-20deg);
+  transition: 0.5s;
+  position: relative;
+}
+.skill .skill__list li:hover div {
+  transform: rotate(0deg);
+}
+.skill .skill__list li div p {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  /* line-height: 1; */
+  /* position: absolute;
+  left: 50%;
+  top:20%;
+  transform: translateX(-55%); */
+}
+.skill .skill__list li h3 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 30px 0 20px;
+}
+
+/* WORK */
+.work {
+  padding-top: 200px;
+  /* overflow: hidden; */
+}
+.work .port {
+  display: flex;
+  margin: 20px 0;
+}
+.work .port .port__img, 
+.work .port .port__text {
+  /* width: 50%; */
+  /* 또는 */
+  flex: 1;
+}
+.work .port .port__img img {
+  width: 100%;
+}
+.work .port .port__text {
+  font-size: 14px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.work .port .port__text h3 {
+  font-size: 20px;
+  font-weight: 800;
+}
+.work .port .port__text li {
+  line-height: 1.8;
+}
+.work .port .port__text span {
+  font-weight: 700;
+}
+.work .port .btn-group {
+  display: flex;
+  /* column-gap: 40px; */
+}
+/* 또는 */
+.work .port .btn-group .btn:first-child {
+  margin-right: 40px;
+}
+
+

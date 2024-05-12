@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 1. 타이틀 변경 -->
+  <title>훈련생이름 포트폴리오</title>
+
+  <!-- 2. 파비콘 적용 -->
+  <!-- 파비콘(favicon.ico)은 프로젝트 폴더의 최상위(Root) 경로에 포함시키면 자동 적용
+    최상위 경로에 없거나, ico가 아닌 별도 파일을 가진 경우에는 <link>로 적용
+
+    (참고) 파비콘 만들기: https://iconifier.net 
+  -->
+  <link rel="icon" href="favicon.ico">
+
+  <!-- 3. reset.css 적용 -->
+  <!-- 스타일 초기화: 브라우저 별로 다른 기본스타일이 적용되는 것을 초기화 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+
+  <!-- 4. 구글 웹폰트 연결 -->
+  <!-- 구글 웹폰트: 경량화된 오픈 라이선스 폰트, 한글 지원하는지 확인 및 필요한 굵기만 선택 후 연결 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <!-- 5. main.css 파일 만들고 폰트 테스트 -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- 6. 헤더 영역 작업 -->
+  <!-- HEADER -->
+  <header>
+    <div class="inner">
+      <!-- 로고 -->
+      <a href="index.html" class="logo">
+        <!-- 본인의 로고를 이미지로 제작 시 logo.png로 만들어서 기존 파일과 교체, 만약 텍스트로 넣을거면 img 요소를 제거하고 텍스트 입력 -->
+        <img src="images/logo.png" alt="로고">
+      </a>
+
+      <nav class="font-en">
+        <ul>
+          <!-- 본인의 메뉴 구조에 맞게 텍스트 변경 -->
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#skill">SKILL</a></li>
+          <li><a href="#work">WORK</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- VISUAL -->
+  <!-- 배경 비디오 적용(슬라이드로 만들고 싶으면 swiper 참고) -->
+  <section class="visual">
+    <video autoplay muted loop>
+      <source src="videos/movie2.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="inner">
+      <h2 class="title font-en">ABOUT</h2>
+      <div class="about__wrapper">
+        <div class="about__img">
+          <!-- 본인 프로필 이미지로 변경 -->
+          <img src="images/profile.jpg" alt="프로필">
+        </div>
+        <div class="about__text">
+          <!-- 본인 슬로건, 이름(생년월), 교육 사항 작성 -->
+          <strong class="slogan font-en">Best or Nothing</strong>
+          <h3 class="font-en">Kim Jae Hyun (1986. 10)</h3>
+          <div>
+            <h4 class="font-en">EDUCATION</h4>
+            <ul>
+              <li>10.03 ~ 12.02 OO학교 OO과 졸업</li>
+              <li>23.12 ~ 24.05 (멀티미디어)영상편집&amp;모션그래픽 과정 수료</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="about__btn font-en">
+        <img src="images/icon/icon_contact.png" alt="전화">
+        <a href="#contact">CONTACT</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILL -->
+  <section id="skill" class="skill">
+    <div class="inner">
+      <h2 class="title font-en">SKILL</h2>
+      <!-- 스킬 추가하려면 li 요소 복사 붙여넣기. 삭제하려면 해당 li 요소만 삭제 -->
+      <ul class="skill__list">
+        <li>
+          <div class="font-en">
+            <p>Ps</p>
+          </div>
+          <h3 class="font-en">PHOTOSHOP</h3>
+          <ul>
+            <li>이미지 편집</li>
+            <li>타이포 그래피</li>
+            <li>아트 워크 제작</li>
+            <li>섬네일 제작</li>
+          </ul>
+        </li>
+        <li>
+          <div class="font-en">
+            <p>Ai</p>
+          </div>
+          <h3 class="font-en">ILLUSTRATOR</h3>
+          <ul>
+            <li>CI·BI 제작</li>
+            <li>캐릭터 디자인</li>
+            <li>타이포 그래피</li>
+            <li>레터링</li>
+          </ul>
+        </li>
+        <!-- <li>
+          <div class="font-en">
+            <p>Html</p>
+          </div>
+          <h3 class="font-en">HTML5</h3>
+          <ul>
+            <li>웹페이지 구성, 편집</li>
+            <li>페이지 디자인</li>
+          </ul>
+        </li> -->
+        <!-- <li>
+          <div class="font-en">
+            <p>Css</p>
+          </div>
+          <h3 class="font-en">CSS3</h3>
+          <ul>
+            <li>홈페이지 디자인, 편집</li>
+            <li>반응형 제작</li>
+          </ul>
+        </li> -->
+        <li>
+          <div class="font-en">
+            <p>Pr</p>
+          </div>
+          <h3 class="font-en">PREMIERE PRO</h3>
+          <ul>
+            <li>영상 편집</li>
+            <li>자막 삽입</li>
+            <li>사운드 디자인</li>
+          </ul>
+        </li>
+        <li>
+          <div class="font-en">
+            <p>Af</p>
+          </div>
+          <h3 class="font-en">AFTER EFFECT</h3>
+          <ul>
+            <li>디지털 모션 그래픽</li>
+            <li>모션 합성</li>
+            <li>모션 타이포 그래피</li>
+          </ul>
+        </li>
+        <li>
+          <div class="font-en">
+            <p>3d</p>
+          </div>
+          <h3 class="font-en">3D MAX<br>CINEMA4D</h3>
+          <ul>
+            <li>모델링</li>
+            <li>렌더링</li>
+            <li>텍스처 삽입</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="work font-en">
+    <div class="inner">
+      <h2 class="title">WORK</h2>
+      <div class="port">
+        <div class="port__img">
+          <img src="images/work_1.jpg" alt="포트폴리오1 썸네일">
+        </div>
+        <div class="port__text">
+          <h3>Kinetic Typography</h3>
+          <ul>
+            <li><span>CONCEPT : </span>해당 영상의 콘셉트 설명</li>
+            <li><span>KEY WORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
+            <li><span>PROGRAM : </span>Adobe After effect, illustrator, photoshop</li>
+            <li><span>COHERENCE : </span>100%</li>
+          </ul>
+          <!-- 구글에서 굿 디자인 웹 검색 후 왼쪽 메뉴에서 'WEB 부분' 클릭하면 타겟층, 표현방법, 콘셉트, 컬러 등 참고 가능 -->
+          <div class="btn-group">
+            <a href="서버상의 pdf 주소" class="btn">VIEW PLAN</a>
+            <a href="javascript:void(0)" class="btn btn-port">VIEW VIDEO</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="port">
+        <div class="port__img">
+          <img src="images/work_2.jpg" alt="포트폴리오2 썸네일">
+        </div>
+        <div class="port__text">
+          <h3>Movie Trailer</h3>
+          <ul>
+            <li><span>CONCEPT : </span>해당 영상의 콘셉트 설명</li>
+            <li><span>KEY WORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
+            <li><span>PROGRAM : </span>Adobe After effect, illustrator, photoshop</li>
+            <li><span>COHERENCE : </span>100%</li>
+          </ul>
+          <!-- 구글에서 굿 디자인 웹 검색 후 왼쪽 메뉴에서 'WEB 부분' 클릭하면 타겟층, 표현방법, 콘셉트, 컬러 등 참고 가능 -->
+          <div class="btn-group">
+            <a href="서버상의 pdf 주소" class="btn">VIEW PLAN</a>
+            <a href="javascript:void(0)" class="btn btn-port">VIEW VIDEO</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="port">
+        <div class="port__img">
+          <img src="images/work_3.jpg" alt="포트폴리오3 썸네일">
+        </div>
+        <div class="port__text">
+          <h3>Album Cover Redesign</h3>
+          <ul>
+            <li><span>CONCEPT : </span>해당 영상의 콘셉트 설명</li>
+            <li><span>KEY WORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
+            <li><span>PROGRAM : </span>Adobe After effect, illustrator, photoshop</li>
+            <li><span>COHERENCE : </span>100%</li>
+          </ul>
+          <!-- 구글에서 굿 디자인 웹 검색 후 왼쪽 메뉴에서 'WEB 부분' 클릭하면 타겟층, 표현방법, 콘셉트, 컬러 등 참고 가능 -->
+          <div class="btn-group">
+            <a href="서버상의 pdf 주소" class="btn">VIEW PLAN</a>
+            <a href="javascript:void(0)" class="btn btn-port">VIEW VIDEO</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="port">
+        <div class="port__img">
+          <img src="images/work_4.jpg" alt="포트폴리오4 썸네일">
+        </div>
+        <div class="port__text">
+          <h3>Detail Page Design I</h3>
+          <ul>
+            <li><span>CONCEPT : </span>해당 영상의 콘셉트 설명</li>
+            <li><span>KEY WORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
+            <li><span>PROGRAM : </span>Adobe After effect, illustrator, photoshop</li>
+            <li><span>COHERENCE : </span>100%</li>
+          </ul>
+          <!-- 구글에서 굿 디자인 웹 검색 후 왼쪽 메뉴에서 'WEB 부분' 클릭하면 타겟층, 표현방법, 콘셉트, 컬러 등 참고 가능 -->
+          <div class="btn-group">
+            <a href="서버상의 pdf 주소" class="btn">VIEW PLAN</a>
+            <a href="javascript:void(0)" class="btn btn-port">VIEW VIDEO</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
