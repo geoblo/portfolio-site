@@ -20,16 +20,44 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
 
   <!-- 4. 구글 웹폰트 연결 -->
-  <!-- 구글 웹폰트: 경량화된 오픈 라이선스 폰트, 한글 지원하는지 확인 및 필요한 굵기만 선택 후 연결 -->
+  <!-- 구글 웹폰트: 경량화된 오픈 라이선스 폰트, 한글 지원하는지 확인 및 필요한 굵기 선택 후 연결 -->
+  <!-- 한글: Noto Sans Korean, 영문: Open Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
-  <!-- 5. main.css 파일 만들고 폰트 테스트 -->
+  <!-- 5. 구글 머티리얼 아이콘 연결 -->
+  <!-- 구글 머티리얼 아이콘: 구글에서 제공하는 머티리얼 스타일의 아이콘, 글자처럼 취급 가능한 장점 -->
+  <!-- 그 외 fontawesome, bootstrap icon 등 -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet"> -->
+  <!-- Filled 외 다른 테마 사용하고 싶으면 -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet" /> -->
+
+  <!-- 6. main.css 파일 만들고 폰트 및 아이콘 테스트 -->
   <link rel="stylesheet" href="css/main.css">
+
+  <!-- 8. ScrollMagic -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- 7. main.js 미리 연결 -->
+  <script defer src="js/main.js"></script>
 </head>
 <body>
-  <!-- 6. 헤더 영역 작업 -->
+  <!-- 폰트 테스트 -->
+  <!-- <span>헬로 월드!</span>
+  <span class="font-en">Hello world!</span> -->
+  <!-- 아이콘 테스트 -->
+  <!-- <span class="material-symbols-outlined">
+    search
+  </span> -->
+  <!-- <span class="material-icons-outlined">
+    search
+  </span>
+  <span class="material-icons">
+    search
+  </span> -->
+
   <!-- HEADER -->
   <header>
     <div class="inner">
@@ -39,9 +67,10 @@
         <img src="images/logo.png" alt="로고">
       </a>
 
+      <!-- 메뉴 -->
       <nav class="font-en">
         <ul>
-          <!-- 본인의 메뉴 구조에 맞게 텍스트 변경 -->
+          <!-- 본인의 메뉴 구조에 맞게 변경 -->
           <li><a href="#about">ABOUT</a></li>
           <li><a href="#skill">SKILL</a></li>
           <li><a href="#work">WORK</a></li>
@@ -69,7 +98,7 @@
           <img src="images/profile.jpg" alt="프로필">
         </div>
         <div class="about__text">
-          <!-- 본인 슬로건, 이름(생년월), 교육 사항 작성 -->
+          <!-- 본인 슬로건, 이름(생년월), 교육 사항 등 작성 -->
           <strong class="slogan font-en">Best or Nothing</strong>
           <h3 class="font-en">Kim Jae Hyun (1986. 10)</h3>
           <div>
@@ -81,6 +110,8 @@
           </div>
         </div>
       </div>
+
+      <!-- 연락처 버튼 -->
       <div class="about__btn font-en">
         <img src="images/icon/icon_contact.png" alt="전화">
         <a href="#contact">CONTACT</a>
@@ -89,7 +120,7 @@
   </section>
 
   <!-- SKILL -->
-  <section id="skill" class="skill">
+  <section id="skill" class="skill scroll-spy">
     <div class="inner">
       <h2 class="title font-en">SKILL</h2>
       <!-- 스킬 추가하려면 li 요소 복사 붙여넣기. 삭제하려면 해당 li 요소만 삭제 -->
@@ -187,14 +218,14 @@
           <h3>Kinetic Typography</h3>
           <ul>
             <li><span>CONCEPT : </span>해당 영상의 콘셉트 설명</li>
-            <li><span>KEY WORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
+            <li><span>KEYWORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
             <li><span>PROGRAM : </span>Adobe After effect, illustrator, photoshop</li>
             <li><span>COHERENCE : </span>100%</li>
           </ul>
           <!-- 구글에서 굿 디자인 웹 검색 후 왼쪽 메뉴에서 'WEB 부분' 클릭하면 타겟층, 표현방법, 콘셉트, 컬러 등 참고 가능 -->
           <div class="btn-group">
             <a href="서버상의 pdf 주소" class="btn">VIEW PLAN</a>
-            <a href="javascript:void(0)" class="btn btn-port">VIEW VIDEO</a>
+            <a href="javascript:void(0)" class="btn btn-play">VIEW VIDEO</a>
           </div>
         </div>
       </div>
@@ -207,14 +238,14 @@
           <h3>Movie Trailer</h3>
           <ul>
             <li><span>CONCEPT : </span>해당 영상의 콘셉트 설명</li>
-            <li><span>KEY WORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
+            <li><span>KEYWORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
             <li><span>PROGRAM : </span>Adobe After effect, illustrator, photoshop</li>
             <li><span>COHERENCE : </span>100%</li>
           </ul>
           <!-- 구글에서 굿 디자인 웹 검색 후 왼쪽 메뉴에서 'WEB 부분' 클릭하면 타겟층, 표현방법, 콘셉트, 컬러 등 참고 가능 -->
           <div class="btn-group">
             <a href="서버상의 pdf 주소" class="btn">VIEW PLAN</a>
-            <a href="javascript:void(0)" class="btn btn-port">VIEW VIDEO</a>
+            <a href="javascript:void(0)" class="btn btn-play">VIEW VIDEO</a>
           </div>
         </div>
       </div>
@@ -227,14 +258,14 @@
           <h3>Album Cover Redesign</h3>
           <ul>
             <li><span>CONCEPT : </span>해당 영상의 콘셉트 설명</li>
-            <li><span>KEY WORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
+            <li><span>KEYWORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
             <li><span>PROGRAM : </span>Adobe After effect, illustrator, photoshop</li>
             <li><span>COHERENCE : </span>100%</li>
           </ul>
           <!-- 구글에서 굿 디자인 웹 검색 후 왼쪽 메뉴에서 'WEB 부분' 클릭하면 타겟층, 표현방법, 콘셉트, 컬러 등 참고 가능 -->
           <div class="btn-group">
             <a href="서버상의 pdf 주소" class="btn">VIEW PLAN</a>
-            <a href="javascript:void(0)" class="btn btn-port">VIEW VIDEO</a>
+            <a href="javascript:void(0)" class="btn btn-play">VIEW VIDEO</a>
           </div>
         </div>
       </div>
@@ -247,18 +278,71 @@
           <h3>Detail Page Design I</h3>
           <ul>
             <li><span>CONCEPT : </span>해당 영상의 콘셉트 설명</li>
-            <li><span>KEY WORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
+            <li><span>KEYWORD : </span>해당 영상의 주요 키워드(예: 20~30대 여성, 모션그래픽, 서정적인, 베이지컬러)</li>
             <li><span>PROGRAM : </span>Adobe After effect, illustrator, photoshop</li>
             <li><span>COHERENCE : </span>100%</li>
           </ul>
           <!-- 구글에서 굿 디자인 웹 검색 후 왼쪽 메뉴에서 'WEB 부분' 클릭하면 타겟층, 표현방법, 콘셉트, 컬러 등 참고 가능 -->
           <div class="btn-group">
             <a href="서버상의 pdf 주소" class="btn">VIEW PLAN</a>
-            <a href="javascript:void(0)" class="btn btn-port">VIEW VIDEO</a>
+            <a href="javascript:void(0)" class="btn btn-play">VIEW VIDEO</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact font-en scroll-spy">
+    <div class="inner">
+      <h2 class="title">CONTACT</h2>
+      <div class="contact__info">
+        <ul>
+          <li><a href="#사이트주소">XXXX.dothome.co.kr</a></li>
+          <li>010-1234-5678</li>
+          <li>XXXX@naver.com</li>
+        </ul>
+      </div>
+      <div class="contact__sns">
+        <ul>
+          <li>
+            <a href="인스트그램 주소" target="_blank">
+              <img src="images/icon/icon_insta.png" alt="인스타그램">
+            </a>
+          </li>
+          <li>
+            <a href="유튜브 주소" target="_blank">
+              <img src="images/icon/icon_youtube.png" alt="유튜브">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="inner">
+      <p class="copyright">
+        &copy; <span class="this-year"></span>
+        훈련생이름. <span class="font_en">All Rights Reserved.</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCROLL TO TOP -->
+  <div id="to-top">
+    <a href="#">
+      <span class="material-symbols-outlined">arrow_upward</span>
+    </a>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal">
+    <div class="modal__inner">
+      <video controls></video>
+      <span class="material-symbols-outlined btn-close">close</span>
+    </div>
+  </div>
 </body>
 </html>
