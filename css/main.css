@@ -64,14 +64,14 @@ a {
 .btn {
   width: 120px;
   padding: 10px;
+  display: block; /* a, span 같은 인라인 요소를 버튼으로 사용할 수도 있으니 블록으로 지정 */
   border: 2px solid #333;
   border-radius: 4px;
   font-size: 16px;
   font-weight: 500;
   text-align: center;
   cursor: pointer;
-  display: block; /* a, span 같은 인라인 요소를 버튼으로 사용할 수도 있으니 블록으로 지정 */
-  transition-duration: 0.5s;
+  transition: 0.5s;
 }
 .btn:hover {
   background-color: #333;
@@ -173,7 +173,7 @@ header nav ul li a:hover {
 .about .about__btn {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 30px;
 }
 .about .about__btn img {
   width: 28px;
@@ -213,19 +213,19 @@ header nav ul li a:hover {
   /* 방법2: translate */
   transform: translateY(0);
 }
-.skill.show .skill__list > li:nth-child(1) {
+.skill .skill__list > li:nth-child(1) {
   transition-delay: 0.2s;
 }
-.skill.show .skill__list > li:nth-child(2) {
+.skill .skill__list > li:nth-child(2) {
   transition-delay: 0.4s;
 }
-.skill.show .skill__list > li:nth-child(3) {
+.skill .skill__list > li:nth-child(3) {
   transition-delay: 0.6s;
 }
-.skill.show .skill__list > li:nth-child(4) {
+.skill .skill__list > li:nth-child(4) {
   transition-delay: 0.8s;
 }
-.skill.show .skill__list > li:nth-child(5) {
+.skill .skill__list > li:nth-child(5) {
   transition-delay: 1s;
 }
 
@@ -236,7 +236,7 @@ header nav ul li a:hover {
   background-color: #b9e3f9;
   transform: rotate(-20deg);
   transition: 0.5s;
-  position: relative;
+  /* position: relative; ?? */
 }
 .skill .skill__list li:hover div {
   transform: rotate(0deg);
@@ -252,7 +252,7 @@ header nav ul li a:hover {
   transform: translateX(-55%); */
 }
 .skill .skill__list li h3 {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   margin: 30px 0 20px;
 }
@@ -287,17 +287,17 @@ header nav ul li a:hover {
 .work .port .port__text li {
   line-height: 1.8;
 }
-.work .port .port__text span {
+.work .port .port__text li span {
   font-weight: 700;
 }
 .work .port .btn-group {
   display: flex;
-  /* column-gap: 40px; */
+  column-gap: 40px;
 }
 /* 또는 */
-.work .port .btn-group .btn:first-child {
+/* .work .port .btn-group .btn:first-child {
   margin-right: 40px;
-}
+} */
 
 /* CONTACT */
 .contact {
@@ -370,11 +370,47 @@ footer .copyright {
   font-weight: 600;
 }
 
+/* MODAL */
+#modal {
+  /* Tip! 화면 전체 영역 덮기 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+#modal .modal__inner {
+  width: 80%;
+  position: relative;
+}
+#modal .modal__inner video {
+  width: 100%;
+}
+#modal .modal__inner .material-symbols-outlined {
+  font-size: 40px;
+  color: #fff;
+  background-color: #eaeaea;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+#modal .modal__inner .material-symbols-outlined:hover {
+  background-color: #333;
+}
+
 /* SCROLL TO TOP */
 #to-top {
   width: 42px;
   height: 42px;
-  /* background-color: #333; */
+  background-color: #fff8e8;
   color: #fff;
   border: 2px solid #333;
   border-radius: 10px;
@@ -395,38 +431,61 @@ footer .copyright {
   line-height: normal; /* 기본값으로 초기화 */
 }
 
-/* MODAL */
-#modal {
-  /* Tip! 화면 전체 영역 덮기 */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 99;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-#modal .modal__inner {
-  width: 80%;
-  position: relative;
-}
-#modal .modal__inner video {
-  width: 100%;
-}
-#modal .modal__inner .material-symbols-outlined {
-  font-size: 40px;
-  color: #fff;
-  background-color: #eaeaea;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  border-radius: 50%;
-}
-#modal .modal__inner .material-symbols-outlined:hover {
-  background-color: #333;
+/* 반응형 */
+@media screen and (max-width: 768px) {
+  .inner {
+    width: 80%;
+  }
+
+  .title {
+    font-size: 30px;
+    margin-bottom: 24px;
+  }
+  .title:after {
+    width: 60px;
+  }
+
+  .about {
+    padding-top: 100px;
+  }
+  .about .about__wrapper {
+    flex-direction: column;
+  }
+  .about .about__wrapper .about__img {
+    width: 100%;
+    text-align: center;
+  }
+  .about .about__wrapper .about__text {
+    width: 100%;
+  }
+
+  .skill {
+    padding-top: 100px;
+  }
+  .skill .skill__list {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .work {
+    padding-top: 100px;
+  }
+  .work .port {
+    flex-direction: column;
+    margin: 40px 0;
+  }
+  .work .port .port__img, 
+  .work .port .port__text {
+    width: 100%;
+  }
+  .work .port .port__text {
+    padding: 20px 0 0;
+  }
+  .work .port .btn-group {
+    margin-top: 24px;
+  }
+
+  .contact {
+    padding: 100px 0;
+  }
 }
