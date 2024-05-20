@@ -66,3 +66,17 @@ window.addEventListener('scroll', function () {
     toTopEl.style.transform = 'translateX(100px)';
   }
 });
+
+// 모바일용 메뉴
+let btnHamburger = document.querySelector('.btn-hamburger');
+let navEl = document.querySelector('header nav');
+let menuItemEls = document.querySelectorAll('header nav ul li a');
+
+btnHamburger.addEventListener('click', function () {
+  navEl.classList.toggle('active');
+});
+menuItemEls.forEach(function (menuItem) {
+  menuItem.addEventListener('click', function () {
+    navEl.classList.remove('active');
+  });
+});

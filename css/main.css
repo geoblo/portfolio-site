@@ -110,6 +110,15 @@ header nav ul li a:hover {
   color: orange;
 }
 
+/* (추가1) 햄버거 버튼 */
+header .btn-hamburger {
+  display: none;
+}
+header .btn-hamburger .material-symbols-outlined {
+  font-size: 40px;
+  line-height: normal;
+}
+
 /* VISUAL */
 .visual {
   /* (중요) 
@@ -443,6 +452,36 @@ footer .copyright {
   }
   .title:after {
     width: 60px;
+  }
+
+  header .btn-hamburger {
+    display: block;
+  }
+  header nav {
+    background-color: rgb(255, 248, 232);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    padding-top: 60px;
+    display: none;
+  }
+  header nav.active {
+    display: block;
+  }
+  header nav ul {
+    display: block;
+  }
+  header nav ul li {
+    padding: 10px 80px;
+    font-size: 30px;
+  }
+  header nav ul li a {
+    transition: 0.5s;
+  }
+  header nav ul li a:hover {
+    letter-spacing: 10px;
   }
 
   .about {
